@@ -54,12 +54,6 @@ function runRPSSL(req, res) {
     var uriPattern = new RegExp(/\/(play)\/(.*)/);
     var uriMatch = req.url.match(uriPattern); // break up the URI via regex
 
-    if(req.url === "/play/rock")
-    switch(req.url){
-        case "/play/rock":
-            break;
-    }
-
     /* Cue overly complex if statement meant to reduce the number of `if` or `switch` statements */
     if (req.method === "POST" && uriMatch !== null && uriMatch.length === 3 && uriMatch[1] === "play" && typeof options[uriMatch[2].toLowerCase()] !== "undefined") {
         res.writeHead(200, {
